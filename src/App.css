@@ -1,0 +1,351 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+:root {
+  --section-spacing: 100px;
+  --hero-bg: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/src/assets/images/BG\ 1.png") center/cover fixed;
+  --about-bg: #f4f9ff;
+  --services-pattern: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 10px,
+    #f8f9fa 10px,
+    #f8f9fa 20px
+  );
+  --contact-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.highlight {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Navbar Styles */
+/* Navbar Custom Styles */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: calc(100% - 2rem);
+  left: 1rem;
+}
+
+.dropdown-menu {
+  min-width: 220px;
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+  padding-left: 1.25rem !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* Hero Section with Parallax Effect */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/src/assets/images/BG\ 1.png") center/cover fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  animation: slideInFromTop 1s ease-in-out;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  animation: slideInFromBottom 1s ease-in-out;
+}
+
+/* About Section */
+#about {
+  padding: 100px 0;
+  background-color: #f8f9fa;
+}
+
+#about h2 {
+  font-weight: 700;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#about .card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#about .card:hover {
+  transform: translateY(-10px);
+}
+
+/* Services Section */
+
+#services {
+  padding: var(--section-spacing) 0;
+  background: var(--services-pattern);
+}
+
+/* #services {
+  padding: 100px 0;
+} */
+
+#services::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--services-pattern);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 50% 0);
+}
+
+#services h2 {
+  font-weight: 700;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* App.css */
+.service-card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  min-height: 300px;
+  color: white !important;
+  border: none !important;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.service-card:hover::before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.service-card .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.software-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.software-grid .badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+}
+
+/* Contact Section */
+#contact {
+  padding: 100px 0;
+  background-color: #f8f9fa;
+}
+
+#contact h2 {
+  font-weight: 700;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.map-container {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Add these variables at the top */
+
+/* Hero Section */
+.hero-section {
+  background: var(--hero-bg);
+  min-height: 100vh;
+}
+
+/* About Section */
+#about {
+  background: var(--about-bg);
+  padding: var(--section-spacing) 0;
+  position: relative;
+}
+
+/* Services Section */
+
+/* Contact Section */
+#contact {
+  padding: var(--section-spacing) 0;
+  background: var(--contact-gradient);
+}
+
+/* Add decorative elements */
+#about::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--about-bg);
+  /* clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0); */
+}
+
+#about,
+#services,
+#contact {
+  transition: all 0.5s ease;
+  transform: translateY(20px);
+ 
+}
+
+#about.in-view,
+#services.in-view,
+#contact.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Counter Section Styles */
+#counter {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.counter-item {
+  transition: all 0.3s ease;
+}
+
+.counter-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.counter-item h3 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .counter-item h3 {
+    font-size: 2rem;
+  }
+}
