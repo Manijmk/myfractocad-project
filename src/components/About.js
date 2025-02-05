@@ -23,21 +23,21 @@ export default function About() {
 
                 <Row className="g-4">
                     <Col lg={8}>
-                        <p className="lead text-muted">
+                        <p className="lead text-muted text-black-50">
                             Factocad Robotics and Automation India Pvt Ltd is a fast-growing digital manufacturing engineering solutions provider.
                         </p>
 
                         <ListGroup variant="flush">
-                            <ListGroup.Item className="d-flex align-items-center">
+                            <ListGroup.Item className="d-flex align-items-center text-black">
                                 <CheckCircle className="text-primary me-3" size={24} />
                                 BIW (Body in White) &
                                 Locomotive Weld Line Solutions
                             </ListGroup.Item>
-                            <ListGroup.Item className="d-flex align-items-center">
+                            <ListGroup.Item className="d-flex align-items-center text-black">
                                 <People className="text-primary me-3" size={24} />
                                 Complete Manufacturing Automation Lifecycle Management
                             </ListGroup.Item>
-                            <ListGroup.Item className="d-flex align-items-center">
+                            <ListGroup.Item className="d-flex align-items-center text-black">
                                 <ClipboardCheck className="text-primary me-3" size={24} />
                                 Robotic Systems for Spot
                                 Welding, MIG Welding & Sealing
@@ -51,14 +51,14 @@ export default function About() {
                     </Col>
 
                     <Col lg={4}>
-                        <Card className="shadow">
+                        <Card className="shadow text-black">
                             <Card.Body>
                                 <Card.Title>Core Competencies</Card.Title>
                                 <ListGroup variant="flush">
-                                    <ListGroup.Item>Process Planning</ListGroup.Item>
-                                    <ListGroup.Item>Fixture Design</ListGroup.Item>
-                                    <ListGroup.Item>Robotic Simulation</ListGroup.Item>
-                                    <ListGroup.Item>Technical Documentation</ListGroup.Item>
+                                    <ListGroup.Item className='text-black'>Process Planning</ListGroup.Item>
+                                    <ListGroup.Item className='text-black'>Fixture Design</ListGroup.Item>
+                                    <ListGroup.Item className='text-black'>Robotic Simulation</ListGroup.Item>
+                                    <ListGroup.Item className='text-black'>Technical Documentation</ListGroup.Item>
                                 </ListGroup>
                             </Card.Body>
                         </Card>
